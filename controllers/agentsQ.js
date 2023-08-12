@@ -4,7 +4,7 @@ const Queue = require('./Agents');
 const agentsQueue = new Queue();
 
 (async () => {
-  const agents = (await User.find({})).map((agent) => agent.unique_id);
+  const agents = (await User.find({})).map((agent) => agent._id);
   for (let i = 0; i < agents.length; i++) {
     agentsQueue.enqueue(agents[i]);
   }

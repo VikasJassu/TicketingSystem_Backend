@@ -7,15 +7,15 @@ const userSchema = new mongoose.Schema({
         required: true,
     },
     unique_id: {
-        type: Number,
+        type: String,
         required:true,
     },
     tickets_assigned: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: "Ticket",
-        },
+       {
+        type:mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "Ticket"
+       },
     ],
 
 });
